@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "loomlib"
+version = "0.1.0"
+description = "Weaving typed action spaces from transformer logits"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [{name = "Blake A. Wilson", email = "blakewilson@alumni.purdue.edu"}]
+keywords = [
+    "structured-prediction",
+    "typed-decoding",
+    "action-spaces",
+    "reinforcement-learning",
+    "transformer",
+    "pytorch",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "torch>=2.0",
+    "tabulate",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "coverage", "ruff", "tox", "build"]
+docs = ["sphinx", "myst-parser", "autodoc2"]
+viz = ["matplotlib>=3.7"]
+pydantic = ["pydantic>=2.0"]
+
+[project.urls]
+Homepage = "https://github.com/btrainwilson/loom"
+Documentation = "https://loomlib.readthedocs.io"
+Repository = "https://github.com/btrainwilson/loom"
+
+[tool.setuptools.packages.find]
+include = ["loomlib*"]
+
+[tool.ruff]
+target-version = "py310"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

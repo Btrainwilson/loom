@@ -1,0 +1,320 @@
+/*  Loom Docs — 70s Rainbow Theme
+ *  Warm off-white base with muted rainbow accents layered on sphinx_rtd_theme.
+ *
+ *  Palette:
+ *    cream      #FAF8F5    warm off-white background
+ *    beige      #F3EDE5    code block / subtle surface
+ *    brown-dk   #3D3229    sidebar, table headers
+ *    brown-md   #5C4A3D    sidebar text
+ *    terracotta #B5553E    links, inline code text
+ *    burnt-org  #C7522A    h1, link hover, primary accent
+ *    mustard    #D4A843    h2, code border, admonition
+ *    olive      #74A54E    h3
+ *    teal       #4A8C7F    h4
+ *    dusty-rose #C27898    occasional accent
+ */
+
+
+/* COLORS = {
+//    "blue":    "#3B3E63",
+//    "cyan":    "#EB6254",
+//    "green":   "#5E5D4C",
+//    "yellow":  "#D9BC65",
+//    "red":     "#E58D58",
+//    "purple":  "#3B3E63",
+//    "grey":    "#3E3E3E",
+//    "black":   "#7A7A7A",
+//}
+
+/* ------------------------------------------------------------------ */
+/*  Global background                                                  */
+/* ------------------------------------------------------------------ */
+
+.wy-body-for-nav {
+    background: #FAF8F5;
+}
+
+.wy-nav-content-wrap {
+    background: #FAF8F5;
+}
+
+.wy-nav-content {
+    background: #FAF8F5;
+    max-width: 900px;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Sidebar                                                            */
+/* ------------------------------------------------------------------ */
+
+.wy-nav-side {
+    background: #3D3229;
+}
+
+.wy-side-nav-search {
+    background: #3D3229;
+}
+
+.wy-side-nav-search input[type="text"] {
+    border-color: #5C4A3D;
+    background: #5C4A3D;
+    color: #FAF8F5;
+}
+
+.wy-side-nav-search input[type="text"]::placeholder {
+    color: #C7B9A8;
+}
+
+.wy-side-nav-search a,
+.wy-side-nav-search .icon {
+    color: #FAF8F5;
+}
+
+.wy-menu-vertical a {
+    color: #D5C8B8;
+}
+
+.wy-menu-vertical a:hover {
+    background: #5C4A3D;
+    color: #FAF8F5;
+}
+
+.wy-menu-vertical li.current > a,
+.wy-menu-vertical li.current a:hover {
+    background: #5C4A3D;
+    color: #FAF8F5;
+    border-right: 3px solid #D4A843;
+}
+
+.wy-menu-vertical li.toctree-l1.current > a {
+    border-bottom-color: #5C4A3D;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Headings — muted rainbow cycle                                     */
+/* ------------------------------------------------------------------ */
+
+h1 {
+    color: #C7522A !important;
+    border-bottom: 2px solid #C7522A;
+    padding-bottom: 0.3em;
+}
+
+h2 {
+    color: #D4A843 !important;
+    border-bottom: 1px solid #E8DCC8;
+    padding-bottom: 0.2em;
+}
+
+h3 {
+    color: #74A54E !important;
+}
+
+h4 {
+    color: #4A8C7F !important;
+}
+
+h5, h6 {
+    color: #C27898 !important;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Links                                                              */
+/* ------------------------------------------------------------------ */
+
+.wy-nav-content a,
+.rst-content a {
+    color: #B5553E;
+}
+
+.wy-nav-content a:hover,
+.rst-content a:hover {
+    color: #C7522A;
+}
+
+.wy-nav-content a:visited {
+    color: #9E4735;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Code blocks                                                        */
+/* ------------------------------------------------------------------ */
+
+.highlight {
+    background: #F3EDE5 !important;
+    border-left: 3px solid #D4A843;
+    border-radius: 2px;
+}
+
+.highlight pre {
+    background: #F3EDE5 !important;
+    color: #3D3229;
+}
+
+code.literal,
+code.docutils.literal,
+.rst-content code.literal {
+    background: #F3EDE5;
+    color: #B5553E;
+    border: 1px solid #E8DCC8;
+    border-radius: 3px;
+    padding: 1px 4px;
+    font-size: 0.9em;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Tables                                                             */
+/* ------------------------------------------------------------------ */
+
+.wy-table-responsive table {
+    background: #FAF8F5;
+}
+
+.wy-table-responsive th,
+.rst-content table.docutils th,
+.rst-content table.field-list th {
+    background: #3D3229 !important;
+    color: #FAF8F5 !important;
+    border-color: #5C4A3D;
+    font-weight: 600;
+}
+
+.wy-table-responsive td,
+.rst-content table.docutils td {
+    border-color: #E8DCC8;
+}
+
+.wy-table-responsive tr:nth-child(even) td {
+    background: #F3EDE5;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Horizontal rules — rainbow gradient stripe                         */
+/* ------------------------------------------------------------------ */
+
+hr {
+    border: none;
+    height: 3px;
+    background: linear-gradient(
+        to right,
+        #C7522A 0%,
+        #D4A843 25%,
+        #74A54E 50%,
+        #4A8C7F 75%,
+        #C27898 100%
+    );
+    margin: 2em 0;
+    border-radius: 2px;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Admonitions                                                        */
+/* ------------------------------------------------------------------ */
+
+.rst-content .admonition {
+    background: #FAF8F5;
+    border-left-width: 4px;
+}
+
+.rst-content .admonition.note {
+    border-left-color: #4A8C7F;
+}
+
+.rst-content .admonition.note .admonition-title {
+    background: #4A8C7F;
+    color: #FAF8F5;
+}
+
+.rst-content .admonition.warning {
+    border-left-color: #D4A843;
+}
+
+.rst-content .admonition.warning .admonition-title {
+    background: #D4A843;
+    color: #3D3229;
+}
+
+.rst-content .admonition.tip,
+.rst-content .admonition.hint {
+    border-left-color: #74A54E;
+}
+
+.rst-content .admonition.tip .admonition-title,
+.rst-content .admonition.hint .admonition-title {
+    background: #74A54E;
+    color: #FAF8F5;
+}
+
+.rst-content .admonition.danger,
+.rst-content .admonition.error {
+    border-left-color: #C7522A;
+}
+
+.rst-content .admonition.danger .admonition-title,
+.rst-content .admonition.error .admonition-title {
+    background: #C7522A;
+    color: #FAF8F5;
+}
+
+.rst-content .admonition.important {
+    border-left-color: #C27898;
+}
+
+.rst-content .admonition.important .admonition-title {
+    background: #C27898;
+    color: #FAF8F5;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Badges / images                                                    */
+/* ------------------------------------------------------------------ */
+
+.rst-content img {
+    border-radius: 4px;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Footer                                                             */
+/* ------------------------------------------------------------------ */
+
+footer {
+    border-top: 3px solid transparent;
+    border-image: linear-gradient(
+        to right,
+        #C7522A,
+        #D4A843,
+        #74A54E,
+        #4A8C7F,
+        #C27898
+    ) 1;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Scrollbar (Webkit)                                                 */
+/* ------------------------------------------------------------------ */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F3EDE5;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #C7B9A8;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #B5553E;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Selection highlight                                                */
+/* ------------------------------------------------------------------ */
+
+::selection {
+    background: #D4A843;
+    color: #3D3229;
+}

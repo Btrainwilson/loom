@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Loom: Well-Typed Action Spaces for Transformer Logits"
+authors:
+  - family-names: Wilson
+    given-names: Blake A.
+type: software
+license: MIT
+url: "https://github.com/btrainwilson/loom"
