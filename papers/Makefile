@@ -6,6 +6,7 @@
 #   make -C papers DPI=200 png
 #
 # Requires: pdflatex. For PNG: pdftoppm (poppler), ImageMagick `magick`, or Ghostscript `gs`.
+# Transparent PDF (pagecolor + nopagecolor in .tex); PNG conversion does not force a white background.
 
 FIGURES_DIR := figures
 
@@ -50,7 +51,7 @@ $(FIGURES_DIR)/%.png: $(FIGURES_DIR)/%.pdf
 	    rm -f "$$dir"/$$stem.tmp-*.png; \
 	  fi; \
 	elif command -v magick >/dev/null 2>&1; then \
-	  magick -density "$$dpi" "$$dir/$$stem.pdf" -background white -alpha remove -alpha off "$$dir/$$stem.png"; \
+	  magick -density "$$dpi" "$$dir/$$stem.pdf" -colorspace sRGB "$$dir/$$stem.png"; \
 	elif command -v gs >/dev/null 2>&1; then \
 	  gs -q -dNOPAUSE -dBATCH -sDEVICE=pngalpha -r"$$dpi" \
 	    -dFirstPage=1 -dLastPage=1 \
