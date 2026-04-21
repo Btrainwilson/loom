@@ -14,7 +14,7 @@ install:
 
 build: html
 
-html:
+html: figures
 	@$(SPHINXBUILD) -M html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 clean:
@@ -25,3 +25,7 @@ serve: html
 
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+
+figures:
+	python generate_figures.py
+	cp ../papers/figures/*.png $(SOURCEDIR)/_static/

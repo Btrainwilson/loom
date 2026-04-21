@@ -1,11 +1,14 @@
 /*  Loom Docs — 70s Rainbow Theme
- *  Warm off-white base with muted rainbow accents layered on sphinx_rtd_theme.
+ *  Cool slate base with muted rainbow accents layered on sphinx_rtd_theme.
  *
- *  Palette:
- *    cream      #FAF8F5    warm off-white background
- *    beige      #F3EDE5    code block / subtle surface
- *    brown-dk   #3D3229    sidebar, table headers
- *    brown-md   #5C4A3D    sidebar text
+ *  Palette (neutrals):
+ *    ice        #F5F6FA    cool off-white background
+ *    frost      #ECEDF3    code block / subtle surface
+ *    slate-dk   #2D3142    sidebar, table headers
+ *    slate-md   #4F5370    sidebar text
+ *    border-lt  #D8DAE4    light borders
+ *
+ *  Palette (accents):
  *    terracotta #B5553E    links, inline code text
  *    burnt-org  #C7522A    h1, link hover, primary accent
  *    mustard    #D4A843    h2, code border, admonition
@@ -15,31 +18,31 @@
  */
 
 
-/* COLORS = {
-//    "blue":    "#3B3E63",
-//    "cyan":    "#EB6254",
-//    "green":   "#5E5D4C",
-//    "yellow":  "#D9BC65",
-//    "red":     "#E58D58",
-//    "purple":  "#3B3E63",
-//    "grey":    "#3E3E3E",
-//    "black":   "#7A7A7A",
-//}
+:root {
+    --loom-blue:    #3B3E63;
+    --loom-cyan:    #EB6254;
+    --loom-green:   #5E5D4C;
+    --loom-yellow:  #D9BC65;
+    --loom-red:     #E58D58;
+    --loom-purple:  #3B3E63;
+    --loom-grey:    #3E3E3E;
+    --loom-black:   #7A7A7A;
+}
 
 /* ------------------------------------------------------------------ */
 /*  Global background                                                  */
 /* ------------------------------------------------------------------ */
 
 .wy-body-for-nav {
-    background: #FAF8F5;
+    background: #F5F6FA;
 }
 
 .wy-nav-content-wrap {
-    background: #FAF8F5;
+    background: #F5F6FA;
 }
 
 .wy-nav-content {
-    background: #FAF8F5;
+    background: #F5F6FA;
     max-width: 900px;
 }
 
@@ -48,46 +51,46 @@
 /* ------------------------------------------------------------------ */
 
 .wy-nav-side {
-    background: #3D3229;
+    background: #2D3142;
 }
 
 .wy-side-nav-search {
-    background: #3D3229;
+    background: #2D3142;
 }
 
 .wy-side-nav-search input[type="text"] {
-    border-color: #5C4A3D;
-    background: #5C4A3D;
-    color: #FAF8F5;
+    border-color: #2D3142;
+    background: #2D3142;
+    color: #F5F6FA;
 }
 
 .wy-side-nav-search input[type="text"]::placeholder {
-    color: #C7B9A8;
+    color: #B0B4C4;
 }
 
 .wy-side-nav-search a,
 .wy-side-nav-search .icon {
-    color: #FAF8F5;
+    color: #F5F6FA;
 }
 
 .wy-menu-vertical a {
-    color: #D5C8B8;
+    color: #B8BCD0;
 }
 
 .wy-menu-vertical a:hover {
-    background: #5C4A3D;
-    color: #FAF8F5;
+    background: #4F5370;
+    color: #F5F6FA;
 }
 
 .wy-menu-vertical li.current > a,
 .wy-menu-vertical li.current a:hover {
-    background: #5C4A3D;
-    color: #FAF8F5;
+    background: #4F5370;
+    color: #F5F6FA;
     border-right: 3px solid #D4A843;
 }
 
 .wy-menu-vertical li.toctree-l1.current > a {
-    border-bottom-color: #5C4A3D;
+    border-bottom-color: #4F5370;
 }
 
 /* ------------------------------------------------------------------ */
@@ -102,7 +105,7 @@ h1 {
 
 h2 {
     color: #D4A843 !important;
-    border-bottom: 1px solid #E8DCC8;
+    border-bottom: 1px solid #D8DAE4;
     padding-bottom: 0.2em;
 }
 
@@ -141,22 +144,22 @@ h5, h6 {
 /* ------------------------------------------------------------------ */
 
 .highlight {
-    background: #F3EDE5 !important;
+    background: #ECEDF3 !important;
     border-left: 3px solid #D4A843;
     border-radius: 2px;
 }
 
 .highlight pre {
-    background: #F3EDE5 !important;
-    color: #3D3229;
+    background: #ECEDF3 !important;
+    color: #2D3142;
 }
 
 code.literal,
 code.docutils.literal,
 .rst-content code.literal {
-    background: #F3EDE5;
+    background: #ECEDF3;
     color: #B5553E;
-    border: 1px solid #E8DCC8;
+    border: 1px solid #D8DAE4;
     border-radius: 3px;
     padding: 1px 4px;
     font-size: 0.9em;
@@ -167,25 +170,25 @@ code.docutils.literal,
 /* ------------------------------------------------------------------ */
 
 .wy-table-responsive table {
-    background: #FAF8F5;
+    background: #F5F6FA;
 }
 
 .wy-table-responsive th,
 .rst-content table.docutils th,
 .rst-content table.field-list th {
-    background: #3D3229 !important;
-    color: #FAF8F5 !important;
-    border-color: #5C4A3D;
+    background: #2D3142 !important;
+    color: #F5F6FA !important;
+    border-color: #4F5370;
     font-weight: 600;
 }
 
 .wy-table-responsive td,
 .rst-content table.docutils td {
-    border-color: #E8DCC8;
+    border-color: #D8DAE4;
 }
 
 .wy-table-responsive tr:nth-child(even) td {
-    background: #F3EDE5;
+    background: #ECEDF3;
 }
 
 /* ------------------------------------------------------------------ */
@@ -212,7 +215,7 @@ hr {
 /* ------------------------------------------------------------------ */
 
 .rst-content .admonition {
-    background: #FAF8F5;
+    background: #F5F6FA;
     border-left-width: 4px;
 }
 
@@ -222,7 +225,7 @@ hr {
 
 .rst-content .admonition.note .admonition-title {
     background: #4A8C7F;
-    color: #FAF8F5;
+    color: #F5F6FA;
 }
 
 .rst-content .admonition.warning {
@@ -231,7 +234,7 @@ hr {
 
 .rst-content .admonition.warning .admonition-title {
     background: #D4A843;
-    color: #3D3229;
+    color: #2D3142;
 }
 
 .rst-content .admonition.tip,
@@ -242,7 +245,7 @@ hr {
 .rst-content .admonition.tip .admonition-title,
 .rst-content .admonition.hint .admonition-title {
     background: #74A54E;
-    color: #FAF8F5;
+    color: #F5F6FA;
 }
 
 .rst-content .admonition.danger,
@@ -253,7 +256,7 @@ hr {
 .rst-content .admonition.danger .admonition-title,
 .rst-content .admonition.error .admonition-title {
     background: #C7522A;
-    color: #FAF8F5;
+    color: #F5F6FA;
 }
 
 .rst-content .admonition.important {
@@ -262,7 +265,7 @@ hr {
 
 .rst-content .admonition.important .admonition-title {
     background: #C27898;
-    color: #FAF8F5;
+    color: #F5F6FA;
 }
 
 /* ------------------------------------------------------------------ */
@@ -271,6 +274,13 @@ hr {
 
 .rst-content img {
     border-radius: 4px;
+    background: transparent;
+}
+
+.rst-content figure,
+.rst-content .figure,
+.rst-content .image-reference {
+    background: transparent;
 }
 
 /* ------------------------------------------------------------------ */
@@ -298,11 +308,11 @@ footer {
 }
 
 ::-webkit-scrollbar-track {
-    background: #F3EDE5;
+    background: #ECEDF3;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #C7B9A8;
+    background: #B0B4C4;
     border-radius: 4px;
 }
 
@@ -316,5 +326,5 @@ footer {
 
 ::selection {
     background: #D4A843;
-    color: #3D3229;
+    color: #2D3142;
 }

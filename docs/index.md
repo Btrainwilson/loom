@@ -6,6 +6,12 @@
 [![Python](https://img.shields.io/pypi/pyversions/loomlib.svg)](https://pypi.python.org/pypi/loomlib/)
 ![Build](https://github.com/btrainwilson/loom/actions/workflows/test.yaml/badge.svg)
 
+```{image} _static/loom_decode.png
+:alt: Loom decoder architecture
+:align: center
+:width: 90%
+```
+
 Loom provides schema-driven encoding and decoding for transformers operating on
 structured data. A single type-annotated schema drives both sides: a
 `LoomEncoder` that tokenizes structured instances into field-level embeddings

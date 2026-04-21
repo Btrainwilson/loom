@@ -40,7 +40,7 @@ OUT_DIR = Path(__file__).resolve().parent / "_static"
 OUT_DIR.mkdir(exist_ok=True)
 
 DPI = 150
-SAVEFIG_KW = dict(dpi=DPI, bbox_inches="tight", facecolor="#FAF8F5")
+SAVEFIG_KW = dict(dpi=DPI, bbox_inches="tight", transparent=True)
 
 
 # -- Schemas (same as in getting-started.md) --------------------------------
