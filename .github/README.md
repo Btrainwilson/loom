@@ -7,6 +7,15 @@
 ![Build](https://github.com/btrainwilson/loom/actions/workflows/test.yaml/badge.svg)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19675915.svg)](https://doi.org/10.5281/zenodo.19675915)
 
+## Main figure
+
+<!--
+Source - https://stackoverflow.com/a/39793125
+Posted by Waylan, modified by community. See post 'Timeline' for change history
+Retrieved 2026-04-21, License - CC BY-SA 4.0
+-->
+
+[**Loom decode**]("../papers/figures/loom_decode.png") — overview of typed decoding from transformer hidden states to structured actions.
 
 Loom replaces the monolithic vocabulary projection in transformer models with
 structured, typed codec layers. A single forward pass can simultaneously predict
