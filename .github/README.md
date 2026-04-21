@@ -5,6 +5,8 @@
 [![PyPI](https://img.shields.io/pypi/v/loomlib.svg)](https://pypi.python.org/pypi/loomlib/)
 [![Python](https://img.shields.io/pypi/pyversions/loomlib.svg)](https://pypi.python.org/pypi/loomlib/)
 ![Build](https://github.com/btrainwilson/loom/actions/workflows/test.yaml/badge.svg)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19675915.svg)](https://doi.org/10.5281/zenodo.19675915)
+
 
 Loom replaces the monolithic vocabulary projection in transformer models with
 structured, typed codec layers. A single forward pass can simultaneously predict

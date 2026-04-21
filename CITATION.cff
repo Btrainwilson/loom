@@ -6,4 +6,5 @@ authors:
     given-names: Blake A.
 type: software
 license: MIT
+doi: "10.5281/zenodo.19675915"
 url: "https://github.com/btrainwilson/loom"
