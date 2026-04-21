@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "loomlib"
 version = "0.1.0"
-description = "Weaving typed action spaces from transformer logits"
+description = "Typed action spaces for transformer logits"
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.10"
