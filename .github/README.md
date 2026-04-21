@@ -185,10 +185,11 @@ codec = LoomCompiler.build_codec(schema, d_model=256)
 ## Citation
 
 ```bibtex
-@inproceedings{wilson2026loom,
-  title={Loom: Well-Typed Action Spaces for Transformer Logits},
-  author={Wilson, Blake A.},
-  year={2026}
+@software{wilson2026loom,
+  title  = {Loom: Well-Typed Action Spaces for Transformer Logits},
+  author = {Wilson, Blake A.},
+  url    = {https://github.com/btrainwilson/loom},
+  year   = {2026}
 }
 ```
 
