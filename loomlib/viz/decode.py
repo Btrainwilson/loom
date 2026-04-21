@@ -4,7 +4,8 @@ from typing import TYPE_CHECKING, Any
 
 import torch
 
-from . import _require_matplotlib
+from . import _require_matplotlib, _transparent
+from .colors import BLUE, GREEN, CYAN
 
 if TYPE_CHECKING:
     import matplotlib.figure
@@ -69,6 +70,7 @@ def plot_decoded(
         fig, ax = plt.subplots()
         ax.text(0.5, 0.5, "No fields to plot", ha="center", va="center",
                 transform=ax.transAxes)
+        _transparent(fig)
         return fig
 
     n = len(fields)
@@ -93,6 +95,7 @@ def plot_decoded(
 
     fig.suptitle("Decoded Values", fontsize=11, y=1.02)
     fig.tight_layout()
+    _transparent(fig)
     return fig
 
 
@@ -102,7 +105,7 @@ def _plot_categorical(ax, vals: torch.Tensor, key: str, entry):
     for v in vals.flatten().long():
         if 0 <= v < n_classes:
             counts[v] += 1
-    ax.bar(range(n_classes), counts.numpy(), color="#4C72B0", edgecolor="white")
+    ax.bar(range(n_classes), counts.numpy(), color=BLUE, edgecolor="white")
     ax.set_xlabel("class")
     ax.set_ylabel("count")
     ax.set_title(key, fontsize=9)
@@ -116,7 +119,7 @@ def _plot_boolean(ax, vals: torch.Tensor, key: str):
     ax.barh(
         [0],
         [n_true],
-        color="#55A868",
+        color=GREEN,
         edgecolor="white",
         label="True",
         height=0.5,
@@ -125,7 +128,7 @@ def _plot_boolean(ax, vals: torch.Tensor, key: str):
         [0],
         [n_false],
         left=[n_true],
-        color="#C44E52",
+        color=CYAN,
         edgecolor="white",
         label="False",
         height=0.5,
@@ -140,15 +143,15 @@ def _plot_continuous(ax, vals: torch.Tensor, key: str, type_name, entry):
     vals_np = vals.float().flatten().numpy()
     x_jitter = [0] * len(vals_np)
 
-    ax.scatter(x_jitter, vals_np, alpha=0.6, s=18, color="#4C72B0",
+    ax.scatter(x_jitter, vals_np, alpha=0.6, s=18, color=BLUE,
                edgecolors="white", linewidths=0.3, zorder=3)
 
     if entry is not None and type_name == "ContinuousScalar":
         lo = entry.thunk_type._lo
         hi = entry.thunk_type._hi
-        ax.axhspan(lo, hi, alpha=0.1, color="#55A868", zorder=1)
-        ax.axhline(lo, color="#55A868", linewidth=0.8, linestyle="--", alpha=0.5)
-        ax.axhline(hi, color="#55A868", linewidth=0.8, linestyle="--", alpha=0.5)
+        ax.axhspan(lo, hi, alpha=0.1, color=GREEN, zorder=1)
+        ax.axhline(lo, color=GREEN, linewidth=0.8, linestyle="--", alpha=0.5)
+        ax.axhline(hi, color=GREEN, linewidth=0.8, linestyle="--", alpha=0.5)
 
     ax.set_xticks([])
     ax.set_title(key, fontsize=9)

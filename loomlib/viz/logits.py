@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING
 
 import torch
 
-from . import _require_matplotlib
+from . import _require_matplotlib, _transparent
 
 if TYPE_CHECKING:
     import matplotlib.figure
@@ -84,4 +84,5 @@ def plot_logits(
 
     fig.colorbar(im, ax=ax, shrink=0.8, label="logit value")
     fig.tight_layout()
+    _transparent(fig)
     return fig

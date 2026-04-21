@@ -4,21 +4,15 @@ from typing import TYPE_CHECKING
 
 import torch
 
-from . import _require_matplotlib
+from . import _require_matplotlib, _transparent
 
 if TYPE_CHECKING:
     import matplotlib.figure
     from ..slice.allocation import SliceAllocation
 
 
-_TYPE_COLORS = {
-    "Categorical": "#4C72B0",
-    "ContinuousScalar": "#55A868",
-    "BitInteger": "#DD8452",
-    "Boolean": "#C44E52",
-    "Scalar": "#8172B3",
-}
-_DEFAULT_COLOR = "#8C8C8C"
+from .colors import TYPE_COLORS as _TYPE_COLORS
+from .colors import DEFAULT_COLOR as _DEFAULT_COLOR
 
 
 def plot_loss_breakdown(
@@ -91,4 +85,5 @@ def plot_loss_breakdown(
     ax.spines["right"].set_visible(False)
 
     fig.tight_layout()
+    _transparent(fig)
     return fig

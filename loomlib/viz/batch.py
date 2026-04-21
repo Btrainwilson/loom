@@ -2,15 +2,14 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from . import _require_matplotlib
-from .allocation import _BRANCH_PALETTES
+from . import _require_matplotlib, _transparent
+from .colors import PALETTE as _BRANCH_PALETTES
+from .colors import PADDING_COLOR as _PADDING_COLOR
 
 if TYPE_CHECKING:
     import matplotlib.figure
     from ..encoder.loom_encoder import LoomEncoder
     from ..encoder.batch import LoomBatch
-
-_PADDING_COLOR = "#E0E0E0"
 
 
 def _build_field_name_map(encoder: LoomEncoder) -> dict[int, tuple[str, str]]:
@@ -139,4 +138,5 @@ def plot_batch(
               framealpha=0.8, edgecolor="none")
 
     fig.tight_layout()
+    _transparent(fig)
     return fig

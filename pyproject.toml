@@ -34,7 +34,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest", "coverage", "ruff", "tox", "build"]
-docs = ["sphinx", "myst-parser", "autodoc2"]
+docs = ["sphinx", "myst-parser", "sphinx-autodoc2", "sphinx-rtd-theme", "roman"]
 viz = ["matplotlib>=3.7"]
 pydantic = ["pydantic>=2.0"]
 

@@ -17,6 +17,13 @@ def _require_matplotlib():
         ) from None
 
 
+def _transparent(fig) -> None:
+    """Make *fig* and all its axes transparent so plots blend with any page background."""
+    fig.patch.set_alpha(0.0)
+    for ax in fig.axes:
+        ax.patch.set_alpha(0.0)
+
+
 # Decoder visualizations
 from .allocation import plot_allocation
 from .logits import plot_logits

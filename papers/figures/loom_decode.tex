@@ -11,20 +11,29 @@
 
 \begin{document}
 
-% Arrow palette: saturated enough for light backgrounds, not pure black so
-% lines stay visible on typical dark UI / GitHub-dark greys behind the PNG.
-\definecolor{loomfwd}{HTML}{2563eb}
-\definecolor{loomback}{HTML}{64748b}
-\definecolor{loomfeed}{HTML}{0d9488}
+% Loom palette — mirrors --loom-* CSS custom properties in docs/_static/custom.css
+% and PALETTE in loomlib/viz/colors.py.
+\definecolor{loomblue}{HTML}{3B3E63}
+\definecolor{loomcyan}{HTML}{EB6254}
+\definecolor{loomgreen}{HTML}{5E5D4C}
+\definecolor{loomyellow}{HTML}{D9BC65}
+\definecolor{loomred}{HTML}{E58D58}
+\definecolor{loomgrey}{HTML}{3E3E3E}
+\definecolor{loomblack}{HTML}{7A7A7A}
+
+% Arrow / flow colours derived from palette
+\definecolor{loomfwd}{HTML}{3B3E63}
+\definecolor{loomback}{HTML}{7A7A7A}
+\definecolor{loomfeed}{HTML}{5E5D4C}
 
 \begin{tikzpicture}[
   font=\sffamily,
-  slice/.style={minimum height=1cm, minimum width=2.2cm, draw, fill=blue!10, align=center, drop shadow},
-  decode/.style={minimum height=1cm, minimum width=2.2cm, draw, fill=green!20, align=center, rounded corners=2pt, drop shadow},
-  fn/.style={minimum height=1cm, draw, fill=orange!20, rounded corners, align=center, drop shadow},
-  action/.style={minimum height=1cm, minimum width=4cm, draw, fill=red!20, rounded corners, thick, align=center, drop shadow},
-  env/.style={cloud, draw, cloud puffs=11, cloud puff arc=120, aspect=2, fill=gray!10, inner sep=0.2cm, align=center},
-  loss/.style={circle, draw, fill=red!10, text=red!80!black, font=\bfseries\small, inner sep=2pt},
+  slice/.style={minimum height=1cm, minimum width=2.2cm, draw, fill=loomblue!15, align=center, drop shadow},
+  decode/.style={minimum height=1cm, minimum width=2.2cm, draw, fill=loomgreen!20, align=center, rounded corners=2pt, drop shadow},
+  fn/.style={minimum height=1cm, draw, fill=loomyellow!25, rounded corners, align=center, drop shadow},
+  action/.style={minimum height=1cm, minimum width=4cm, draw, fill=loomcyan!20, rounded corners, thick, align=center, drop shadow},
+  env/.style={cloud, draw, cloud puffs=11, cloud puff arc=120, aspect=2, fill=loomgrey!10, inner sep=0.2cm, align=center},
+  loss/.style={circle, draw, fill=loomred!15, text=loomred!90!black, font=\bfseries\small, inner sep=2pt},
   arrow/.style={->, >=Stealth, thick, color=loomfwd},
   backprop/.style={->, >=latex, dashed, thick, color=loomback},
   feedback/.style={->, >=Stealth, dotted, thick, color=loomfeed},
@@ -67,7 +76,7 @@
 ]
 
 % --- 1. SliceLayer ---
-\node[layerlabel] at (-1.5, 0.5) {Slice Layer};
+\node[layerlabel] at (-1.5, 0.0) {Slice Layer};
 \node[slice] (s1) at (0, 0) {$\mathbf{z}_{int}$ \\ \tiny{[Idx 0..7]}};
 \node[slice] (s2) at (3.5, 0) {$\mathbf{z}_{scalar}$ \\ \tiny{[Idx 8..12]}};
 \node[slice] (s3) at (7, 0) {$\mathbf{z}_{angle}$ \\ \tiny{[Idx 13..16]}};

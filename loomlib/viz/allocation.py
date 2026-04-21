@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from . import _require_matplotlib
+from . import _require_matplotlib, _transparent
 
 if TYPE_CHECKING:
     import matplotlib.figure
@@ -10,19 +10,8 @@ if TYPE_CHECKING:
     from ..slice.allocation import SliceAllocation
 
 
-_BRANCH_PALETTES = [
-    "#4C72B0",  # steel blue
-    "#DD8452",  # muted orange
-    "#55A868",  # sage green
-    "#C44E52",  # brick red
-    "#8172B3",  # muted purple
-    "#937860",  # brown
-    "#DA8BC3",  # pink
-    "#8C8C8C",  # gray
-    "#CCB974",  # olive
-    "#64B5CD",  # sky blue
-]
-_OPCODE_COLOR = "#B0B0B0"
+from .colors import PALETTE as _BRANCH_PALETTES
+from .colors import OPCODE_COLOR as _OPCODE_COLOR
 
 
 def _resolve_allocation(
@@ -136,4 +125,5 @@ def plot_allocation(
     ax.spines["right"].set_visible(False)
 
     fig.tight_layout()
+    _transparent(fig)
     return fig

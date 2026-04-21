@@ -5,7 +5,7 @@ from typing import TYPE_CHECKING
 import numpy as np
 import torch
 
-from . import _require_matplotlib
+from . import _require_matplotlib, _transparent
 
 if TYPE_CHECKING:
     import matplotlib.figure
@@ -69,4 +69,5 @@ def plot_embedding_norms(
 
     fig.colorbar(im, ax=ax, shrink=0.8, label="L2 norm")
     fig.tight_layout()
+    _transparent(fig)
     return fig

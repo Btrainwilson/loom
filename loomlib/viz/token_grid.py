@@ -5,7 +5,7 @@ from typing import TYPE_CHECKING
 import numpy as np
 import torch
 
-from . import _require_matplotlib
+from . import _require_matplotlib, _transparent
 
 if TYPE_CHECKING:
     import matplotlib.figure
@@ -61,7 +61,8 @@ def plot_token_grid(
     vmax = max(abs(real_vals.min()), abs(real_vals.max()), 1e-6) if real_vals.size > 0 else 1.0
 
     cmap_obj = plt.get_cmap(cmap).copy()
-    cmap_obj.set_bad(color="#E0E0E0")
+    from .colors import PADDING_COLOR
+    cmap_obj.set_bad(color=PADDING_COLOR)
 
     im = ax.imshow(
         vals,
@@ -100,4 +101,5 @@ def plot_token_grid(
 
     fig.colorbar(im, ax=ax, shrink=0.8, label="encoded value")
     fig.tight_layout()
+    _transparent(fig)
     return fig
